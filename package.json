@@ -1,0 +1,60 @@
+{
+  "name": "robot-simulator",
+  "version": "0.0.0",
+  "description": "Robot Simulator kata",
+  "author": "Matt Morgan",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthewmorgan/robot-simulator.git"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^22.2.2",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^5.0.1",
+    "eslint-plugin-react": "^7.6.1",
+    "jest": "^22.2.2"
+  },
+  "jest": {
+    "modulePathIgnorePatterns": [
+      "package.json",
+      "node_modules"
+    ]
+  },
+  "scripts": {
+    "test": "jest ./*.spec.js",
+    "watch": "jest --watch ./*.spec.js",
+    "watch:cover": "jest --coverage --watch ./*.spec.js",
+    "lint": "eslint .",
+    "lint-test": "eslint . && jest --no-cache ./* "
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    },
+    "env": {
+      "es6": true,
+      "node": true,
+      "jest": true
+    },
+    "extends": "standard",
+    "rules": {
+      "import/no-unresolved": "off",
+      "import/extensions": "off"
+    }
+  },
+  "licenses": [
+    "MIT"
+  ],
+  "dependencies": {},
+  "bugs": {
+    "url": "https://github.com/matthewmorgan/robot-simulator/issues"
+  },
+  "homepage": "https://github.com/matthewmorgan/robot-simulator#readme",
+  "main": "index.js"
+}
