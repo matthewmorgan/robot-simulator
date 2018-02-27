@@ -84,52 +84,52 @@ describe('Robot', () => {
     expect(robot.coordinates).toEqual([3, 0])
   })
 
-  xtest('other robot coordinates', () => {
+  test('other robot coordinates', () => {
     robot.at(-2, 5)
     expect(robot.coordinates).toEqual([-2, 5])
   })
 
-  xtest('advance when facing north', () => {
+  test('advance when facing north', () => {
     robot.at(0, 0)
     robot.orient('north')
     robot.advance()
     expect(robot.coordinates).toEqual([0, 1])
   })
 
-  xtest('advance when facing east', () => {
+  test('advance when facing east', () => {
     robot.at(0, 0)
     robot.orient('east')
     robot.advance()
     expect(robot.coordinates).toEqual([1, 0])
   })
 
-  xtest('advance when facing south', () => {
+  test('advance when facing south', () => {
     robot.at(0, 0)
     robot.orient('south')
     robot.advance()
     expect(robot.coordinates).toEqual([0, -1])
   })
 
-  xtest('advance when facing west', () => {
+  test('advance when facing west', () => {
     robot.at(0, 0)
     robot.orient('west')
     robot.advance()
     expect(robot.coordinates).toEqual([-1, 0])
   })
 
-  xtest('instructions for turning left', () => {
+  test('instructions for turning left', () => {
     expect(robot.instructions('L')).toEqual(['turnLeft'])
   })
 
-  xtest('instructions for turning right', () => {
+  test('instructions for turning right', () => {
     expect(robot.instructions('R')).toEqual(['turnRight'])
   })
 
-  xtest('instructions for advancing', () => {
+  test('instructions for advancing', () => {
     expect(robot.instructions('A')).toEqual(['advance'])
   })
 
-  xtest('series of instructions', () => {
+  test('series of instructions', () => {
     expect(robot.instructions('RAAL'))
       .toEqual(['turnRight', 'advance', 'advance', 'turnLeft'])
   })
