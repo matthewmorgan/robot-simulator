@@ -20,6 +20,17 @@ describe('Robot', () => {
     }
   })
 
+  test('another invalid robot bearing', () => {
+   let errCaught = false;
+    try {
+      robot.orient('croobar')
+    } catch (exception) {
+      errCaught = true;
+      expect(exception).toEqual('Invalid Robot Bearing')
+    }
+    expect(errCaught).toEqual(true);
+  })
+
   test('turn right from north', () => {
     robot.orient('north')
     robot.turnRight()
@@ -44,31 +55,31 @@ describe('Robot', () => {
     expect(robot.bearing).toEqual('north')
   })
 
-  xtest('turn left from north', () => {
+  test('turn left from north', () => {
     robot.orient('north')
     robot.turnLeft()
     expect(robot.bearing).toEqual('west')
   })
 
-  xtest('turn left from east', () => {
+  test('turn left from east', () => {
     robot.orient('east')
     robot.turnLeft()
     expect(robot.bearing).toEqual('north')
   })
 
-  xtest('turn left from south', () => {
+  test('turn left from south', () => {
     robot.orient('south')
     robot.turnLeft()
     expect(robot.bearing).toEqual('east')
   })
 
-  xtest('turn left from west', () => {
+  test('turn left from west', () => {
     robot.orient('west')
     robot.turnLeft()
     expect(robot.bearing).toEqual('south')
   })
 
-  xtest('robot coordinates', () => {
+  test('robot coordinates', () => {
     robot.at(3, 0)
     expect(robot.coordinates).toEqual([3, 0])
   })

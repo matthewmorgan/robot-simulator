@@ -1,10 +1,15 @@
+const directions = ['north', 'east', 'south', 'west'];
+
 class Robot {
+  at(x, y) {
+    this.coordinates = [x, y];
+  }
 
   orient(currentDirection) {
-    this.bearing = currentDirection;
-    if (currentDirection === "crood") {
+    if (!directions.includes(currentDirection)) {
       throw "Invalid Robot Bearing";
     }
+    this.bearing = currentDirection;
   }
 
   turnRight() {
@@ -22,6 +27,24 @@ class Robot {
         this.bearing = "north";
     }
   }
+
+  turnLeft() {
+    switch (this.bearing) {
+      case "north":
+        this.bearing = "west";
+        break;
+      case "east":
+        this.bearing = "north";
+        break;
+      case "south":
+        this.bearing = "east";
+        break;
+      default:
+        this.bearing = "south";
+    }
+  }
+
+
 
 }
 
