@@ -12,7 +12,7 @@ describe('Robot', () => {
     })
   })
 
-  xtest('invalid robot bearing', () => {
+  test('invalid robot bearing', () => {
     try {
       robot.orient('crood')
     } catch (exception) {
