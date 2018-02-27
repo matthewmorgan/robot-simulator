@@ -18,6 +18,8 @@ class Robot {
       case "south":
         this.bearing = "west";
         break;
+      default:
+        this.bearing = "north";
     }
   }
 
