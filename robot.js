@@ -8,7 +8,14 @@ class Robot {
   }
 
   turnRight() {
-    this.bearing = "east";
+    switch (this.bearing) {
+      case "north":
+        this.bearing = "east";
+        break;
+      case "east":
+        this.bearing = "south";
+        break;
+    }
   }
 
 }

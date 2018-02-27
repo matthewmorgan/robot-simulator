@@ -26,7 +26,7 @@ describe('Robot', () => {
     expect(robot.bearing).toEqual('east')
   })
 
-  xtest('turn right from east', () => {
+  test('turn right from east', () => {
     robot.orient('east')
     robot.turnRight()
     expect(robot.bearing).toEqual('south')
