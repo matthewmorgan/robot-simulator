@@ -15,6 +15,9 @@ class Robot {
       case "east":
         this.bearing = "south";
         break;
+      case "south":
+        this.bearing = "west";
+        break;
     }
   }
 
